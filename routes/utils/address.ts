@@ -1,6 +1,6 @@
 import axios from "axios";
-import { addressType } from "../../models/interfaces/itf_address";
-export async function getAddressByCep(value: string): Promise< addressType | string> {
+
+export async function getAddressByCep(value: string): Promise< any | string> {
     try {
         
         const cep = value.replace("-", "")
@@ -17,7 +17,7 @@ export async function getAddressByCep(value: string): Promise< addressType | str
             neighborhood: addressData.bairro,
             city: addressData.localidade,
             state: addressData.uf
-        } as addressType
+        }
         return address;
 
     } catch (error) {

@@ -2,11 +2,14 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
-    "strict": true,
+    "lib": ["es6"],
     "esModuleInterop": true,
-    "outDir": "dist"
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "outDir": "./dist"
   },
-  "include": [
-    "test/**/*.test.ts"
-  ]
+  "include": ["src", "test/**/*.test.ts", "models", "middleware"],
+  "exclude": ["node_modules"]
 }

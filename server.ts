@@ -1,7 +1,10 @@
 import express from "express";
 import mongoose, { ConnectOptions } from "mongoose"
 import cors from "cors";
+import phonesRoute from "./routes/phonesRoute";
 import cadasterRoute from "./routes/cadasterRoute";
+import locationRoute from "./routes/locationRoute";
+
 require('dotenv').config();
 
 const app = express();
@@ -12,6 +15,8 @@ const url_database: string = process.env.DATABASE_URL as string
 app.use(cors());
 app.use(express.json());
 app.use("/api/cadaster", cadasterRoute);
+app.use("/api/mobile", phonesRoute)
+app.use("/api/location", locationRoute)
 
 const options: ConnectOptions = {
     useNewUrlParser: true,
